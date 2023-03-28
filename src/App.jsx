@@ -50,7 +50,7 @@ function App() {
 
   useEffect(() => {
     const fetchAllRecipeData = async () => {
-      const URL = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=10&tags=pescatarian`;
+      const URL = `https://api.spoonacular.com/recipes/random?apiKey=${API_KEY}&number=25&tags=pescatarian`;
       const response = await fetch(URL);
       const json = await response.json();
       console.log(json.recipes);
