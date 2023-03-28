@@ -18,7 +18,7 @@ The following **required** functionality is completed:
   - [X] average cooking time of the recipes
 - [X] **A search bar allows the user to search for an item in the fetched data**
 - [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
-  - Currently can only filter by healthy recipes (health score >= 15)
+  - Currently can only filter by healthy recipes (health score >= 10)
 
 ## Video Walkthrough
 
