@@ -35,7 +35,7 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Working with the API was quite challenging given there were so many endpoints and options avaialble. It took some time to figure out how to use it and then the best way to use it for my use case. It was also difficult using useEffect and fetch to get the correct information. The search results were another issue as there were many ways to implement them and I was not sure which was best. The last problem was figuring out how to filter based on categories, unfourtuntely I did it in a weird way so it would be difficult to add multiple categories. I should have made it easier to extend but I did not have enough time to redo it so I only had one category to fitler by. I was planning on being able to filter by diet type, intolerences, and potentially cusisine as well.
 
 ## License
 
