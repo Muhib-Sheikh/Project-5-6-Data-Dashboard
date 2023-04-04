@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import DataTable from "/Components/DataTable";
 import Card from "/Components/Card";
+import DataChart from "/Components/DataChart";
+import RecipeChart from "/Components/RecipeChart";
+
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 function App() {
@@ -35,7 +38,9 @@ function App() {
     for (let i = 0; i < Object.keys(recipeList.recipes).length; i++) {
       sumReadyTime += recipeList.recipes[i].readyInMinutes;
     }
-    avgReadyTime = sumReadyTime / Object.keys(recipeList.recipes).length;
+    avgReadyTime = Math.ceil(
+      sumReadyTime / Object.keys(recipeList.recipes).length
+    );
 
     setReadyTime(avgReadyTime);
   };
@@ -61,50 +66,57 @@ function App() {
 
   return (
     <div className="App">
-      <h1>RandomRecipes</h1>
-      <div className="statistics">
-        <Card title="Recipes Count" data={recipesCount} />
-        <Card title="Healthy Recipes Count" data={setHealthyRecipesCount} />
-        <Card title="Average Cooking Time" data={readyTime} />
-      </div>
-      <div className="list card">
-        <div className="search">
-          <input
-            type="text"
-            placeholder="Search by recipe name.."
-            onChange={(event) => setSearchInput(event.target.value)}
-          />
-          <label className="check_container">
-            Healthy Recipes
-            <input
-              type="checkbox"
-              checked={checked}
-              onChange={(event) => setCheckedState(!checked)}
-            ></input>
-          </label>
-        </div>
-        {recipeList ? (
-          <DataTable
-            recipeList={recipeList}
-            searchInput={searchInput}
-            checked={checked}
-          />
-        ) : (
-          <div className="data_table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Cooking Time</th>
-                  <th>Health Score</th>
-                  <th>Source</th>
-                  <th>Image</th>
-                </tr>
-                <tr></tr>
-              </thead>
-            </table>
+      <div className="page-content">
+        <div className="content">
+          <div className="statistics">
+            <Card title="Recipe Count" data={recipesCount} />
+            <Card title="Healthy Recipe Count" data={setHealthyRecipesCount} />
+            <Card title="Average Cooking Time" data={readyTime} />
           </div>
-        )}
+          <div className="list card">
+            <div className="search">
+              <input
+                type="text"
+                placeholder="Search by name..."
+                onChange={(event) => setSearchInput(event.target.value)}
+              />
+              <label className="check_container">
+                Healthy Recipes
+                <input
+                  type="checkbox"
+                  checked={checked}
+                  onChange={(event) => setCheckedState(!checked)}
+                ></input>
+              </label>
+            </div>
+            {recipeList ? (
+              <DataTable
+                recipeList={recipeList}
+                searchInput={searchInput}
+                checked={checked}
+              />
+            ) : (
+              <div className="data_table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Cooking Time</th>
+                      <th>Health Score</th>
+                      <th>Source</th>
+                      <th>Image</th>
+                    </tr>
+                    <tr></tr>
+                  </thead>
+                </table>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="chart_content chart_card">
+          <DataChart recipeList={recipeList} />
+          <RecipeChart recipeList={recipeList} />
+        </div>
       </div>
     </div>
   );

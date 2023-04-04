@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const DataTable = ({ recipeList, searchInput, checked }) => {
   return (
     <div className="data_table">
@@ -9,6 +11,7 @@ const DataTable = ({ recipeList, searchInput, checked }) => {
             <th>Health Score</th>
             <th>Source</th>
             <th>Image</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody>
@@ -42,6 +45,11 @@ const DataTable = ({ recipeList, searchInput, checked }) => {
                     src={recipeList.recipes[index].image}
                     alt={`Image of a ${recipeList.recipes[index].title}`}
                   />
+                </td>
+                <td className="cell">
+                  <Link to={`/recipeDetails/${recipeList.recipes[index].id}`}>
+                    🔗
+                  </Link>
                 </td>
               </tr>
             ))}
