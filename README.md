@@ -52,3 +52,49 @@ Working with the API was quite challenging given there were so many endpoints an
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+# Web Development Project 6 - *RandomRecipes*
+
+Submitted by: **Muhib Sheikh**
+
+This web app: **A web app that gets a list of random recipies and lets the user find ones they like**
+
+Time spent: **6** hours spent in total
+
+## Required Features
+
+The following **required** functionality is completed:
+
+- [X] **The app includes at least two unique chart developed using the fetched data that tell an interesting story**
+- [X] **Clicking on an item in the list view displays more details about it**
+- [X] **Clicking on an item has a direct, unique link to that item's detail view page**
+
+## Video Walkthrough
+
+<img src='Project6Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+<!-- Replace this with whatever GIF tool you used! -->
+GIF created with [Licecap](https://www.cockos.com/licecap/) for Windows/mac  
+<!-- Recommended tools:
+[Kap](https://getkap.co/) for macOS
+[ScreenToGif](https://www.screentogif.com/) for Windows
+[peek](https://github.com/phw/peek) for Linux. -->
+
+## Notes
+The main issues I faced included positioning everything and making them look good. Also using the API to make it work with the individual ids and get the dispaly the info . The charts were a but challenging as well and updating the hooks took quite some time. 
+
+## License
+
+    Copyright 2023 Muhib Sheikh
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
